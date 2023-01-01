@@ -1,0 +1,23 @@
+Package: Rcalendar
+Type: Package
+Date: 2023-01-01
+Title: A simple package containing a lookup table between different ways of expressing dates
+Version: 0.1.0
+Authors@R: person(given = "Luca", family = "Valnegri", email = "l.valnegri@datamaps.co.uk", role = c("aut", "cre"))
+Description: 
+  A simple package containing a lookup table between different ways of expressing dates.
+  It also includes a list of the formulas used for each representation.
+License: MIT + file LICENSE
+Language: en-GB
+Encoding: UTF-8
+URL: https://github.com/lvalnegri/Rcalendar
+BugReports: https://github.com/lvalnegri/Rcalendar/issues
+Depends: R (>= 4.1)
+Imports:
+    data.table,
+Suggests:
+Remotes:
+LazyData: true
+LazyDataCompression:gzip
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.1
