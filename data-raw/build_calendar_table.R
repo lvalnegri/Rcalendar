@@ -73,7 +73,7 @@ message('Adding weekdays and working days...')
 cal[, is_weekday := 'Yes'][dow %in% 6:7, is_weekday := 'No']
 cal[, is_workingday := is_weekday]
 yh <- fread('./data-raw/csv/uk_holidays.csv')
-cal[dte %in% yh$yte, is_workingday := 'No']
+cal[dte %in% yh$dte, is_workingday := 'No']
 
 message('Converting categorical into factors...')
 cols <- c('season', 'mseason', 'is_weekday','is_workingday')
