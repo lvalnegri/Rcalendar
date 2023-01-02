@@ -34,7 +34,7 @@ message('Adding month of quarter (1:3)...')
 cal[, moq := ifelse(moy %in% c(1, 4, 7, 10), 1, ifelse(moy %in% c(2, 5, 8, 11), 2, 3))]
 
 message('Adding financial year ([FY]YY)...')
-calc_fyear <- Vectorize( function(x, y) paste0('FY', if(x > 3) {y + 1 - 2000} else {y - 2000} ))
+calc_fyear <- Vectorize( function(x, y) paste0('FY-', ifelse(x <= 3, substr(y - 1, 3, 4), substr(y, 3, 4) ) ) )
 cal[, fyear := factor(calc_fyear(moy, year), ordered = TRUE)]
 
 message('Adding week of year (1:53) and week of month (1:5)...')
@@ -61,12 +61,13 @@ cal[moy %in% 3:5, mseason := 'Spring']
 cal[moy %in% 6:8, mseason := 'Summer']
 cal[moy %in% 9:11, mseason := 'Autumn']
 ys <- fread('./data-raw/csv/seasons.csv')
+save_dts_pkg(ys, 'seasons', dbn = 'calendar')
 cal[, season := mseason]
 for(yr in year(start_date):year(end_date)){
-    cal[year == yr & moy == 3 & dom < ys[year == yr, March], season := 'Winter']
-    cal[year == yr & moy == 6 & dom < ys[year == yr, June], season := 'Spring']
-    cal[year == yr & moy == 9 & dom < ys[year == yr, September], season := 'Summer']
-    cal[year == yr & moy == 12 & dom < ys[year == yr, December], season := 'Autumn']
+    cal[year == yr & moy == 3 & dom < ys[year == yr, winter], season := 'Winter']
+    cal[year == yr & moy == 6 & dom < ys[year == yr, spring], season := 'Spring']
+    cal[year == yr & moy == 9 & dom < ys[year == yr, summer], season := 'Summer']
+    cal[year == yr & moy == 12 & dom < ys[year == yr, autumn], season := 'Autumn']
 }
 
 message('Adding weekdays and working days...')
