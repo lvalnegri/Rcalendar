@@ -8,39 +8,39 @@
 A data.table with the following columns:
 \describe{
 \item{\code{ dte }}{ the date in \emph{standard} format \code{YYYY-MM-DD} }
-\item{\code{ is_weekday }}{  }
-\item{\code{ is_workingday }}{  }
-\item{\code{ year }}{  }
-\item{\code{ fyear }}{   }
-\item{\code{ quarter }}{   }
-\item{\code{ qoy }}{  }
-\item{\code{ month }}{  }
-\item{\code{ moy }}{  }
-\item{\code{ moyt }}{  }
-\item{\code{ moyts }}{  }
-\item{\code{ moq }}{  }
-\item{\code{ week }}{  }
-\item{\code{ dweek }}{  }
-\item{\code{ woy }}{  }
-\item{\code{ woq }}{  }
-\item{\code{ wom }}{  }
-\item{\code{ doy }}{  }
-\item{\code{ doq }}{  }
-\item{\code{ dom }}{  }
-\item{\code{ dow }}{ Day of the Week (following ISO-8601 with Monday the first day)  }
-\item{\code{ dowt }}{ Day of the Week as text, an ordered factor with Monday as the first day }
-\item{\code{ dowts  }}{ Day of the Week as short text, an ordered factor with Monday as the first day }
-\item{\code{ rdow }}{ Day of the Week (following most religions with Sunday the first day) }
-\item{\code{ rdowt }}{ Day of the Week as text, an ordered factor with Sunday as the first day }
-\item{\code{ rdowts  }}{ Day of the Week as short text, an ordered factor with Sunday as the first day }
-\item{\code{ mseason }}{ \emph{Meteorological} Season: the starts are the first of the months: March, June, September, December }
-\item{\code{ aseason }}{ \emph{Astronomical} Season: the starts are: 20th March, 21th June, 23th September, 21th December }
+\item{\code{ is_weekday }}{ \code{Yes} for Mon-Fri, \code{No} for Sat and Sun }
+\item{\code{ is_workingday }}{ \code{No} for Sat and Sun plus \emph{holidays} (as listed in the \code{holidays_uk} table), \code{Yes} for all the other days }
+\item{\code{ year }}{ Year }
+\item{\code{ fyear }}{ Financial Year (1st April to 31st March)  }
+\item{\code{ quarter }}{ Quarter (as Year + Quarter of the Year) }
+\item{\code{ qoy }}{ Quarter of the Year }
+\item{\code{ month }}{ Month (as Month of the Year in short form text + Year) }
+\item{\code{ moy }}{ Month of the Year }
+\item{\code{ moyt }}{ Month of the Year in text  }
+\item{\code{ moyts }}{ Month of the Year in short form text  }
+\item{\code{ moq }}{ Month of the Quarter }
+\item{\code{ week }}{ Week of the Year (as Year + \code{-W} + the number of the Week following ISO 8601) }
+\item{\code{ dweek }}{ Date of the Week of the Year (as the standard date of the Monday of the Week of the Year) }
+\item{\code{ woy }}{ Week of the Year (number only) }
+\item{\code{ woq }}{ Week of the Quarter }
+\item{\code{ wom }}{ Week of the Month }
+\item{\code{ doy }}{ Day of the Year }
+\item{\code{ doq }}{ Day of the Quarter }
+\item{\code{ dom }}{ Day of the Month }
+\item{\code{ dow }}{ Day of the Week (following ISO-8601, with Monday the first day of the Week)  }
+\item{\code{ dowt }}{ Day of the Week as text, an ordered factor with Monday as the first day of the Week }
+\item{\code{ dowts  }}{ Day of the Week as short text, an ordered factor with Monday as the first day of the Week }
+\item{\code{ rdow }}{ Gregorian Day of the Week (with Sunday the first day of the Week) }
+\item{\code{ rdowt }}{ Gregorian Day of the Week as text, an ordered factor with Sunday as the first day of the Week }
+\item{\code{ rdowts  }}{ Gregorian Day of the Week as short text, an ordered factor with Sunday as the first day of the Week }
+\item{\code{ mseason }}{ \emph{Meteorological} Season (with the starting days being the first of the months: March, June, September, December) }
+\item{\code{ aseason }}{ \emph{Astronomical} Season (as listed in the \code{seasons} table) }
 }
 }
 \usage{
 calendar
 }
 \description{
-Description ...
+All days from 1st Jan 1970 until 31st Dec 2025 with some properties, characteristics and formattings.
 }
 \keyword{datasets}

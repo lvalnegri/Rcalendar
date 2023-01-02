@@ -7,8 +7,8 @@
 \format{
 A data.table with the following columns:
 \describe{
-\item{\code{ dte }}{ the date }
-\item{\code{ name }}{  the name of the holiday }
+\item{\code{ dte }}{ the date of the holiday in \emph{standard} format \code{YYYY-MM-DD}}
+\item{\code{ name }}{ the name of the holiday }
 }
 }
 \usage{
