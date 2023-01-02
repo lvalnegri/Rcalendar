@@ -1,0 +1,36 @@
+table,column,description
+calendar,dte,the date in *standard* format `YYYY-MM-DD`
+calendar,is_weekday,"`Yes` for Mon-Fri, `No` for Sat and Sun"
+calendar,is_workingday,"`No` for Sat and Sun plus *holidays* (as listed in the `holidays_uk` table), `Yes` for all the other days"
+calendar,year,Year
+calendar,fyear,Financial Year (1st April to 31st March) 
+calendar,quarter,Quarter (as Year + Quarter of the Year)
+calendar,qoy,Quarter of the Year
+calendar,month,Month (as Month of the Year in short form text + Year)
+calendar,moy,Month of the Year
+calendar,moyt,Month of the Year in text 
+calendar,moyts,Month of the Year in short form text 
+calendar,moq,Month of the Quarter
+calendar,week,Week of the Year (as Year + `-W` + the number of the Week following ISO 8601)
+calendar,dweek,Date of the Week of the Year (as the standard date of the Monday of the Week of the Year)
+calendar,woy,Week of the Year (number only)
+calendar,woq,Week of the Quarter
+calendar,wom,Week of the Month
+calendar,doy,Day of the Year
+calendar,doq,Day of the Quarter
+calendar,dom,Day of the Month
+calendar,dow,"Day of the Week (following ISO-8601, with Monday the first day of the Week)"
+calendar,dowt,"Day of the Week as text, an ordered factor with Monday as the first day of the Week"
+calendar,dowts,"Day of the Week as short text, an ordered factor with Monday as the first day of the Week"
+calendar,gdow,Gregorian Day of the Week (with Sunday the first day of the Week)
+calendar,gdowt,"Gregorian Day of the Week as text, an ordered factor with Sunday as the first day of the Week"
+calendar,gdowts,"Gregorian Day of the Week as short text, an ordered factor with Sunday as the first day of the Week"
+calendar,season,*Astronomical* Season (as listed in the `seasons` table)
+calendar,mseason,"*Meteorological* Season (with the starting days being the first of the months: March, June, September, December)"
+uk_holidays,dte,the date of the holiday in *standard* format `YYYY-MM-DD`
+uk_holidays,name,the name of the holiday
+seasons,year,the year
+seasons,spring,the starting day for Spring
+seasons,summer,the starting day for Summer
+seasons,autumn,the starting day for Autumn
+seasons,winter,the starting day for Winter
