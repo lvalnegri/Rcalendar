@@ -44,14 +44,14 @@ message('Adding week (YYYY-[W]01:52) and Monday start date of the week (YYYY-MM-
 cal[, week := factor(ISOweek::ISOweek(dte), ordered = TRUE)][, dweek := ISOweek::ISOweek2date(paste0(week, '-1'))]
 
 message('Adding day of week (1:7), month (1:31), and year (1:366)...')
-cal[, `:=`( rdow = wday(dte), dom = mday(dte), doy = yday(dte))]
+cal[, `:=`( gdow = wday(dte), dom = mday(dte), doy = yday(dte))]
 
 message('Adding day of week in long (DDDD) and short (DD) char formats...')
 ord_days <- c('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday')
-cal[, rdowt := factor(weekdays(dte), levels = ord_days, ordered = TRUE)]
-cal[, rdowts := factor(substr(rdowt, 1, 3), levels = substr(ord_days, 1, 3), ordered = TRUE)]
+cal[, gdowt := factor(weekdays(dte), levels = ord_days, ordered = TRUE)]
+cal[, gdowts := factor(substr(gdowt, 1, 3), levels = substr(ord_days, 1, 3), ordered = TRUE)]
 ord_days <- c('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday')
-cal[, dow := sapply(rdowt, \(x) which(x == ord_days))]
+cal[, dow := sapply(gdowt, \(x) which(x == ord_days))]
 cal[, dowt := factor(weekdays(dte), levels = ord_days, ordered = TRUE)]
 cal[, dowts := factor(substr(dowt, 1, 3), levels = substr(ord_days, 1, 3), ordered = TRUE)]
 
@@ -83,7 +83,7 @@ cal[, (cols) := lapply(.SD, as.factor), .SDcols = cols]
 message('Changing order to columns...')
 setcolorder(cal, c(
     'dte', 'is_weekday', 'is_workingday', 'year', 'fyear', 'quarter', 'qoy', 'month', 'moy', 'moyt', 'moyts', 'moq',
-    'week', 'dweek', 'woy', 'woq', 'wom', 'doy', 'doq', 'dom', 'dow', 'dowt', 'dowts', 'rdow', 'rdowt', 'rdowts',
+    'week', 'dweek', 'woy', 'woq', 'wom', 'doy', 'doq', 'dom', 'dow', 'dowt', 'dowts', 'gdow', 'gdowt', 'gdowts',
     'season', 'mseason'
 ))
 save_dts_pkg(cal, 'calendar', dbn = 'calendar')

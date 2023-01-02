@@ -30,11 +30,11 @@ A data.table with the following columns:
 \item{\code{ dow }}{ Day of the Week (following ISO-8601, with Monday the first day of the Week)  }
 \item{\code{ dowt }}{ Day of the Week as text, an ordered factor with Monday as the first day of the Week }
 \item{\code{ dowts  }}{ Day of the Week as short text, an ordered factor with Monday as the first day of the Week }
-\item{\code{ rdow }}{ Gregorian Day of the Week (with Sunday the first day of the Week) }
-\item{\code{ rdowt }}{ Gregorian Day of the Week as text, an ordered factor with Sunday as the first day of the Week }
-\item{\code{ rdowts  }}{ Gregorian Day of the Week as short text, an ordered factor with Sunday as the first day of the Week }
+\item{\code{ gdow }}{ Gregorian Day of the Week (with Sunday the first day of the Week) }
+\item{\code{ gdowt }}{ Gregorian Day of the Week as text, an ordered factor with Sunday as the first day of the Week }
+\item{\code{ gdowts  }}{ Gregorian Day of the Week as short text, an ordered factor with Sunday as the first day of the Week }
+\item{\code{ season }}{ \emph{Astronomical} Season (as listed in the \code{seasons} table) }
 \item{\code{ mseason }}{ \emph{Meteorological} Season (with the starting days being the first of the months: March, June, September, December) }
-\item{\code{ aseason }}{ \emph{Astronomical} Season (as listed in the \code{seasons} table) }
 }
 }
 \usage{
