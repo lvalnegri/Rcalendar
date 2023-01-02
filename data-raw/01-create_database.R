@@ -76,6 +76,17 @@ x <- "
 "
 dd_create_dbtable('uk_holidays', dbn, x)
 
+## SEASONS ----
+x <- "
+    `year` SMALLINT(4) UNSIGNED NOT NULL,
+    `spring` TINYINT(2) UNSIGNED NOT NULL,
+    `summer` TINYINT(2) UNSIGNED NOT NULL,
+    `autumn` TINYINT(2) UNSIGNED NOT NULL,
+    `winter` TINYINT(2) UNSIGNED NOT NULL,
+    PRIMARY KEY (`year`)
+"
+dd_create_dbtable('seasons', dbn, x)
+
 
 ## END ------------
 rm(list = ls())
